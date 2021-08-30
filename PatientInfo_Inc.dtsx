@@ -1,0 +1,3145 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/18/2021 12:35:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USER-20210729GJ"
+  DTS:CreatorName="USER-20210729GJ\Administrator"
+  DTS:DTSID="{111579ED-15B1-4721-8AE2-5F19E41C68C9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{092A0222-971E-4981-912F-B592D6284C5F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[128.0.16.59.EMRCenter.sqladmin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E18DD9E6-07C4-4A03-A6B0-C5510C13039C}"
+      DTS:ObjectName="128.0.16.59.EMRCenter.sqladmin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=128.0.16.59;User ID=sqladmin;Initial Catalog=EMRCenter;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADCobTYjJiBTddyDlkludiPFoKRS/y3IkHYnEQfC+DgNwAAAAAOgAAAAAIAACAAAAB33m8PEs9Bdf70EcmMOf35ufDBH1wzSNwERhHKFKZA1CAAAABnDmxrOHsI0smx2N21DvMU2hm7J1a+bFhQaYi2ewKlfUAAAADRX8e3U9+yzJjglPyHKvQr6OEjR8kaWl7bw+1J8XzLfFX9T0gzYFDeUc622z+O0TGVPYcoVEYtlddIGGk5RWFM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+      DTS:CreationName="ADO.NET:System.Data.OracleClient.OracleConnection, System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{C7C4C2B2-A719-41AD-8124-BD04475A0D37}"
+      DTS:ObjectName="128.100.200.86/hisdb.redh">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=128.100.200.86/hisdb;User ID=redh;Persist Security Info=True;Unicode=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACohLqGeJcwLQgWDiVx4/KMdRxu3andkOzjjZOmnHKACgAAAAAOgAAAAAIAACAAAAC2QK3h6DUUD6+G/Qqcze6BDjGPJWaZ44BNzRK7gQEqRRAAAADG89GCq8RvpnHiY8xik0OtQAAAAOE7pI/J904Q2FEfm/JUAmZ5cZgr5rmWy5IfzyU3ruXTl2nPJgfmwciD/YNKWSg8c0a7aUXARA3nNME3eCsGY6k</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9C906D3A-F813-4BFD-8CD8-6BB283A11953}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;EXEC Merge_Stag_PatientInfo&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MergeSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">EXEC Merge_Stag_PatientInfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DCE6BC0B-1F87-45F0-ACA9-96BFF2CBCB23}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51631D8B-84D7-4C7B-B26E-62B3823855E9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTable">
+      <DTS:VariableValue
+        DTS:DataType="8">v_patientinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B40D16D1-25F1-4D21-B3D3-1A066D9AB6CC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTableShema">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3C6A5CC-8075-4225-8EC6-82EEF763CB0C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetStagTableName">
+      <DTS:VariableValue
+        DTS:DataType="8">[EMRCenter].[dbo].[Stag_PatientInfo]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E54C78AA-C2CC-4EE9-9D12-AD008A4ABDD5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetTableName">
+      <DTS:VariableValue
+        DTS:DataType="8">[EMRCenter].[dbo].[PatientInfo]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{58EED005-2919-416A-8890-A5F9FB515427}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;TRUNCATE TABLE &quot;+ @[User::TargetStagTableName] + &quot; &#xA;GO&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TruncateSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">TRUNCATE TABLE [EMRCenter].[dbo].[Stag_PatientInfo] 
+GO</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17BEE0B8-24D3-4A25-87EE-6ACD54AE02D8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="WhereClause">
+      <DTS:VariableValue
+        DTS:DataType="8">WHERE 1=1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TruncateTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{CA5246D9-E0E3-42E8-B13F-3840440CBECC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TruncateTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E18DD9E6-07C4-4A03-A6B0-C5510C13039C}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::TruncateSQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\序列容器"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{DD4D8122-5E10-48A7-8AE7-F555B2CB5A1B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="序列容器">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\序列容器\Merge"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="执行 SQL 任务"
+          DTS:DTSID="{1685C73C-36BB-4125-9E71-E55D09ED1437}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Merge"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E18DD9E6-07C4-4A03-A6B0-C5510C13039C}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::MergeSQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\序列容器\数据流任务"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{2A4128F1-15EA-428B-9E70-824D00CC2C19}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="数据流任务"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\序列容器\数据流任务.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{CC3DE7FB-268D-47C2-8607-7642BECC8890}"
+              DTS:EventID="1091525673"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="事件的传播属性"
+                  DTS:DTSID="{52A688EF-FEDE-4611-918C-0865AE8CE17B}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\序列容器\数据流任务\ADO NET 源"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+                  name="ADO NET 源"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="指定组件用来提取数据的 SQL 语句。"
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  *
+FROM      v_patientinfo</property>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="源数据库表名。"
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"APEX_030200"."SYS_IOT_OVER_72926"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定检索外部列信息的模式"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+                      connectionManagerRefId="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+                      description="托管连接管理器"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出]"
+                      name="ADO NET 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATIENTID]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          precision="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SYXH]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SYXH]"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SYXH]"
+                          name="SYXH"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITNO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITNO]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITNO]"
+                          name="ADMITNO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURENO]"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]"
+                          name="CURENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[HOSPCODE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[HOSPCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[HOSPCODE]"
+                          name="HOSPCODE"
+                          precision="38"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARD]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARD]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARD]"
+                          name="WARD"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDCODE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARDCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDCODE]"
+                          name="WARDCODE"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARDNAME]"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDNAME]"
+                          name="WARDNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTNAME]"
+                          length="40"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTNAME]"
+                          name="DEPTNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BEDNO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BEDNO]"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BEDNO]"
+                          name="BEDNO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[FULLNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[FULLNAME]"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[FULLNAME]"
+                          name="FULLNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEX]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SEX]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEX]"
+                          name="SEX"
+                          precision="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOSPITALCOUNT]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[INHOSPITALCOUNT]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOSPITALCOUNT]"
+                          name="INHOSPITALCOUNT"
+                          precision="38"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONALITY]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITY]"
+                          name="NATIONALITY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITYCODE]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONALITYCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITYCODE]"
+                          name="NATIONALITYCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATION]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATION]"
+                          name="NATION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONCODE]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONCODE]"
+                          name="NATIONCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROFESSION]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSION]"
+                          name="PROFESSION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSIONCODE]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROFESSIONCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSIONCODE]"
+                          name="PROFESSIONCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDNO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CARDNO]"
+                          length="32"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDNO]"
+                          name="CARDNO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDTYPE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CARDTYPE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDTYPE]"
+                          name="CARDTYPE"
+                          precision="38"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATTYPE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATTYPE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATTYPE]"
+                          name="PATTYPE"
+                          precision="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PERSONALID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PERSONALID]"
+                          length="22"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PERSONALID]"
+                          name="PERSONALID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[STATUS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[STATUS]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[STATUS]"
+                          name="STATUS"
+                          precision="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOS_TYPE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[INHOS_TYPE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOS_TYPE]"
+                          name="INHOS_TYPE"
+                          precision="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITDATE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDATE]"
+                          name="ADMITDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEDATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEDATE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEDATE]"
+                          name="DISCHARGEDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDIAG]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITDIAG]"
+                          length="150"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDIAG]"
+                          name="ADMITDIAG"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHDAY]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHDAY]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHDAY]"
+                          name="BIRTHDAY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PTBIRTHPLACE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PTBIRTHPLACE]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PTBIRTHPLACE]"
+                          name="PTBIRTHPLACE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[JGBIRTHPLACE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[JGBIRTHPLACE]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[JGBIRTHPLACE]"
+                          name="JGBIRTHPLACE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MARRIAGE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[MARRIAGE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MARRIAGE]"
+                          name="MARRIAGE"
+                          precision="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACES]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHPLACES]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACES]"
+                          name="BIRTHPLACES"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHPLACE]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACE]"
+                          name="BIRTHPLACE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BAH]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BAH]"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BAH]"
+                          name="BAH"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESS]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESS]"
+                          name="CURRENTADDRESS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPHONENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESSPHONENO]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPHONENO]"
+                          name="CURRENTADDRESSPHONENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESSPOSTCODE]"
+                          length="8"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPOSTCODE]"
+                          name="CURRENTADDRESSPOSTCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESS]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESS]"
+                          name="ACCOUNTADDRESS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESSPHONENO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          name="ACCOUNTADDRESSPHONENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESSPOSTCODE]"
+                          length="12"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPOSTCODE]"
+                          name="ACCOUNTADDRESSPOSTCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTADDRESS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTADDRESS]"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTADDRESS]"
+                          name="CONTACTADDRESS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTFULLNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTFULLNAME]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTFULLNAME]"
+                          name="CONTACTFULLNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTRELATIONSHIP]"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIP]"
+                          name="CONTACTRELATIONSHIP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTRELATIONSHIPCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          name="CONTACTRELATIONSHIPCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTPHONENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTPHONENO]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTPHONENO]"
+                          name="CONTACTPHONENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITADDRESS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKUNITADDRESS]"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITADDRESS]"
+                          name="WORKUNITADDRESS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITPHONENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKUNITPHONENO]"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITPHONENO]"
+                          name="WORKUNITPHONENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKPLACEPOSTCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKPLACEPOSTCODE]"
+                          length="8"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKPLACEPOSTCODE]"
+                          name="WORKPLACEPOSTCODE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEMODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODE]"
+                          name="DISCHARGEMODE"
+                          precision="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODENAME]"
+                          dataType="nText"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEMODENAME]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODENAME]"
+                          name="DISCHARGEMODENAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MEDICALPAYWAY]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[MEDICALPAYWAY]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MEDICALPAYWAY]"
+                          name="MEDICALPAYWAY"
+                          precision="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[OPERATORNO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[OPERATORNO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[OPERATORNO]"
+                          name="OPERATORNO"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ISONWORK]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ISONWORK]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ISONWORK]"
+                          name="ISONWORK"
+                          precision="1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATIENTID]"
+                          dataType="numeric"
+                          name="PATIENTID"
+                          precision="10" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SYXH]"
+                          dataType="wstr"
+                          length="10"
+                          name="SYXH" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITNO]"
+                          dataType="wstr"
+                          length="20"
+                          name="ADMITNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURENO]"
+                          dataType="wstr"
+                          length="10"
+                          name="CURENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[HOSPCODE]"
+                          dataType="numeric"
+                          name="HOSPCODE"
+                          precision="38"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARD]"
+                          dataType="numeric"
+                          name="WARD"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARDCODE]"
+                          dataType="numeric"
+                          name="WARDCODE"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WARDNAME]"
+                          dataType="wstr"
+                          length="30"
+                          name="WARDNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTCODE]"
+                          dataType="numeric"
+                          name="DEPTCODE"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTNAME]"
+                          dataType="wstr"
+                          length="40"
+                          name="DEPTNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BEDNO]"
+                          dataType="wstr"
+                          length="10"
+                          name="BEDNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[FULLNAME]"
+                          dataType="wstr"
+                          length="50"
+                          name="FULLNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SEX]"
+                          dataType="numeric"
+                          name="SEX"
+                          precision="1" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[INHOSPITALCOUNT]"
+                          dataType="numeric"
+                          name="INHOSPITALCOUNT"
+                          precision="38"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONALITY]"
+                          dataType="wstr"
+                          length="20"
+                          name="NATIONALITY" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONALITYCODE]"
+                          dataType="nText"
+                          name="NATIONALITYCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATION]"
+                          dataType="wstr"
+                          length="20"
+                          name="NATION" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[NATIONCODE]"
+                          dataType="nText"
+                          name="NATIONCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROFESSION]"
+                          dataType="wstr"
+                          length="20"
+                          name="PROFESSION" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROFESSIONCODE]"
+                          dataType="nText"
+                          name="PROFESSIONCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CARDNO]"
+                          dataType="wstr"
+                          length="32"
+                          name="CARDNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CARDTYPE]"
+                          dataType="numeric"
+                          name="CARDTYPE"
+                          precision="38"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATTYPE]"
+                          dataType="numeric"
+                          name="PATTYPE"
+                          precision="4" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PERSONALID]"
+                          dataType="wstr"
+                          length="22"
+                          name="PERSONALID" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[STATUS]"
+                          dataType="numeric"
+                          name="STATUS"
+                          precision="1" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[INHOS_TYPE]"
+                          dataType="numeric"
+                          name="INHOS_TYPE"
+                          precision="2" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITDATE]"
+                          dataType="dbTimeStamp"
+                          name="ADMITDATE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEDATE]"
+                          dataType="dbTimeStamp"
+                          name="DISCHARGEDATE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ADMITDIAG]"
+                          dataType="wstr"
+                          length="150"
+                          name="ADMITDIAG" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHDAY]"
+                          dataType="dbTimeStamp"
+                          name="BIRTHDAY" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PTBIRTHPLACE]"
+                          dataType="wstr"
+                          length="20"
+                          name="PTBIRTHPLACE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[JGBIRTHPLACE]"
+                          dataType="wstr"
+                          length="100"
+                          name="JGBIRTHPLACE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[MARRIAGE]"
+                          dataType="numeric"
+                          name="MARRIAGE"
+                          precision="1" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHPLACES]"
+                          dataType="wstr"
+                          length="100"
+                          name="BIRTHPLACES" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BIRTHPLACE]"
+                          dataType="wstr"
+                          length="100"
+                          name="BIRTHPLACE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[BAH]"
+                          dataType="wstr"
+                          length="10"
+                          name="BAH" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          name="CURRENTADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESSPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          name="CURRENTADDRESSPHONENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURRENTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          length="8"
+                          name="CURRENTADDRESSPOSTCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          name="ACCOUNTADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESSPHONENO]"
+                          dataType="nText"
+                          name="ACCOUNTADDRESSPHONENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ACCOUNTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          length="12"
+                          name="ACCOUNTADDRESSPOSTCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          name="CONTACTADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTFULLNAME]"
+                          dataType="wstr"
+                          length="20"
+                          name="CONTACTFULLNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTRELATIONSHIP]"
+                          dataType="wstr"
+                          length="30"
+                          name="CONTACTRELATIONSHIP" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTRELATIONSHIPCODE]"
+                          dataType="nText"
+                          name="CONTACTRELATIONSHIPCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CONTACTPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          name="CONTACTPHONENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKUNITADDRESS]"
+                          dataType="wstr"
+                          length="50"
+                          name="WORKUNITADDRESS" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKUNITPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          name="WORKUNITPHONENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[WORKPLACEPOSTCODE]"
+                          dataType="wstr"
+                          length="8"
+                          name="WORKPLACEPOSTCODE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEMODE]"
+                          dataType="numeric"
+                          name="DISCHARGEMODE"
+                          precision="2" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DISCHARGEMODENAME]"
+                          dataType="nText"
+                          name="DISCHARGEMODENAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[MEDICALPAYWAY]"
+                          dataType="numeric"
+                          name="MEDICALPAYWAY"
+                          precision="1" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[OPERATORNO]"
+                          dataType="numeric"
+                          name="OPERATORNO"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ISONWORK]"
+                          dataType="numeric"
+                          name="ISONWORK"
+                          precision="1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出]"
+                      isErrorOut="true"
+                      name="ADO NET 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATIENTID]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          precision="10" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SYXH]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SYXH]"
+                          name="SYXH" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITNO]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITNO]"
+                          name="ADMITNO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURENO]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURENO]"
+                          name="CURENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[HOSPCODE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[HOSPCODE]"
+                          name="HOSPCODE"
+                          precision="38"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARD]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARD]"
+                          name="WARD"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARDCODE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARDCODE]"
+                          name="WARDCODE"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARDNAME]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WARDNAME]"
+                          name="WARDNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTCODE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTNAME]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTNAME]"
+                          name="DEPTNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BEDNO]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BEDNO]"
+                          name="BEDNO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[FULLNAME]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[FULLNAME]"
+                          name="FULLNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SEX]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SEX]"
+                          name="SEX"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[INHOSPITALCOUNT]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[INHOSPITALCOUNT]"
+                          name="INHOSPITALCOUNT"
+                          precision="38"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONALITY]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONALITY]"
+                          name="NATIONALITY" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONALITYCODE]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONALITYCODE]"
+                          name="NATIONALITYCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATION]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATION]"
+                          name="NATION" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONCODE]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[NATIONCODE]"
+                          name="NATIONCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROFESSION]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROFESSION]"
+                          name="PROFESSION" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROFESSIONCODE]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROFESSIONCODE]"
+                          name="PROFESSIONCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CARDNO]"
+                          dataType="wstr"
+                          length="32"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CARDNO]"
+                          name="CARDNO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CARDTYPE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CARDTYPE]"
+                          name="CARDTYPE"
+                          precision="38"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATTYPE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATTYPE]"
+                          name="PATTYPE"
+                          precision="4" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PERSONALID]"
+                          dataType="wstr"
+                          length="22"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PERSONALID]"
+                          name="PERSONALID" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[STATUS]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[STATUS]"
+                          name="STATUS"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[INHOS_TYPE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[INHOS_TYPE]"
+                          name="INHOS_TYPE"
+                          precision="2" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITDATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITDATE]"
+                          name="ADMITDATE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEDATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEDATE]"
+                          name="DISCHARGEDATE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITDIAG]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ADMITDIAG]"
+                          name="ADMITDIAG" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHDAY]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHDAY]"
+                          name="BIRTHDAY" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PTBIRTHPLACE]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PTBIRTHPLACE]"
+                          name="PTBIRTHPLACE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[JGBIRTHPLACE]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[JGBIRTHPLACE]"
+                          name="JGBIRTHPLACE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[MARRIAGE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[MARRIAGE]"
+                          name="MARRIAGE"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHPLACES]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHPLACES]"
+                          name="BIRTHPLACES" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHPLACE]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BIRTHPLACE]"
+                          name="BIRTHPLACE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BAH]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[BAH]"
+                          name="BAH" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESS]"
+                          name="CURRENTADDRESS" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESSPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESSPHONENO]"
+                          name="CURRENTADDRESSPHONENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          length="8"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURRENTADDRESSPOSTCODE]"
+                          name="CURRENTADDRESSPOSTCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESS]"
+                          name="ACCOUNTADDRESS" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          name="ACCOUNTADDRESSPHONENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESSPOSTCODE]"
+                          dataType="wstr"
+                          length="12"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ACCOUNTADDRESSPOSTCODE]"
+                          name="ACCOUNTADDRESSPOSTCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTADDRESS]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTADDRESS]"
+                          name="CONTACTADDRESS" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTFULLNAME]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTFULLNAME]"
+                          name="CONTACTFULLNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTRELATIONSHIP]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTRELATIONSHIP]"
+                          name="CONTACTRELATIONSHIP" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          name="CONTACTRELATIONSHIPCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CONTACTPHONENO]"
+                          name="CONTACTPHONENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKUNITADDRESS]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKUNITADDRESS]"
+                          name="WORKUNITADDRESS" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKUNITPHONENO]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKUNITPHONENO]"
+                          name="WORKUNITPHONENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKPLACEPOSTCODE]"
+                          dataType="wstr"
+                          length="8"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[WORKPLACEPOSTCODE]"
+                          name="WORKPLACEPOSTCODE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEMODE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEMODE]"
+                          name="DISCHARGEMODE"
+                          precision="2" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEMODENAME]"
+                          dataType="nText"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DISCHARGEMODENAME]"
+                          name="DISCHARGEMODENAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[MEDICALPAYWAY]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[MEDICALPAYWAY]"
+                          name="MEDICALPAYWAY"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[OPERATORNO]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[OPERATORNO]"
+                          name="OPERATORNO"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ISONWORK]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ISONWORK]"
+                          name="ISONWORK"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\序列容器\数据流任务\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[Stag_PatientInfo]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[128.0.16.59.EMRCenter.sqladmin]"
+                      connectionManagerRefId="Package.ConnectionManagers[128.0.16.59.EMRCenter.sqladmin]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WARDNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="WARDNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WardName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DEPTNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="DEPTNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DeptName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[NATIONALITY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="NATIONALITY"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Nationality]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITY]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[NATION]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="NATION"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Nation]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATION]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PROFESSION]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="PROFESSION"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Profession]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSION]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CARDNO]"
+                          cachedDataType="wstr"
+                          cachedLength="32"
+                          cachedName="CARDNO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CardNo]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDNO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PERSONALID]"
+                          cachedDataType="wstr"
+                          cachedLength="22"
+                          cachedName="PERSONALID"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PersonalID]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PERSONALID]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ADMITDIAG]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="ADMITDIAG"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitDiag]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDIAG]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PTBIRTHPLACE]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="PTBIRTHPLACE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PTBirthPlace]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PTBIRTHPLACE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[JGBIRTHPLACE]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="JGBIRTHPLACE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[JGBirthPlace]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[JGBIRTHPLACE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BIRTHPLACES]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="BIRTHPLACES"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthPlaceS]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACES]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BIRTHPLACE]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="BIRTHPLACE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthPlace]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHPLACE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CURRENTADDRESS]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="CURRENTADDRESS"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddress]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CURRENTADDRESSPHONENO]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CURRENTADDRESSPHONENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddressPhoneNo]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPHONENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CURRENTADDRESSPOSTCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="CURRENTADDRESSPOSTCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddressPostcode]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURRENTADDRESSPOSTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ACCOUNTADDRESS]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ACCOUNTADDRESS"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddress]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ACCOUNTADDRESSPOSTCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="12"
+                          cachedName="ACCOUNTADDRESSPOSTCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddressPostcode]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPOSTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CONTACTADDRESS]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="CONTACTADDRESS"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactAddress]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTADDRESS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CONTACTFULLNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CONTACTFULLNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactFullName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTFULLNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CONTACTRELATIONSHIP]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="CONTACTRELATIONSHIP"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactRelationship]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIP]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CONTACTPHONENO]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CONTACTPHONENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactPhoneNo]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTPHONENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WORKUNITADDRESS]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="WORKUNITADDRESS"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkUnitAddress]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITADDRESS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WORKUNITPHONENO]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="WORKUNITPHONENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkUnitPhoneNo]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKUNITPHONENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WORKPLACEPOSTCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="WORKPLACEPOSTCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkPlacePostcode]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WORKPLACEPOSTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[FULLNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="FULLNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[FullName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[FULLNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[SYXH]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SYXH"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[SYXH]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SYXH]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BAH]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="BAH"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BAH]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[BAH]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WARDCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="WARDCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WardCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARDCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[WARD]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="WARD"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Ward]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARD]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DEPTCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="DEPTCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DeptCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ADMITDATE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ADMITDATE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitDate]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ADMITDATE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DISCHARGEDATE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="DISCHARGEDATE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeDate]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEDATE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[INHOS_TYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="INHOS_TYPE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[INHOS_TYPE]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOS_TYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BIRTHDAY]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="BIRTHDAY"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthDay]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BIRTHDAY]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[STATUS]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="STATUS"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Status]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[MEDICALPAYWAY]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="MEDICALPAYWAY"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[MedicalPayWay]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MEDICALPAYWAY]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[INHOSPITALCOUNT]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="INHOSPITALCOUNT"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[InHospitalCount]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOSPITALCOUNT]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PATTYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PATTYPE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatType]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATTYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[NATIONALITYCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NATIONALITYCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[NationalityCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONALITYCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[NATIONCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NATIONCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[NationCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PROFESSIONCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PROFESSIONCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ProfessionCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PROFESSIONCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DISCHARGEMODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="DISCHARGEMODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeMode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ISONWORK]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ISONWORK"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ISONWORK]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ISONWORK]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[MARRIAGE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="MARRIAGE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Marriage]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MARRIAGE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CARDTYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CARDTYPE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CardType]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CARDTYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CONTACTRELATIONSHIPCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CONTACTRELATIONSHIPCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactRelationshipCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CONTACTRELATIONSHIPCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BEDNO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="BEDNO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BedNo]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BEDNO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[HOSPCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HOSPCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[HospCode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[HOSPCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ADMITNO]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ADMITNO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitNO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITNO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CURENO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CURENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CureNO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DISCHARGEMODENAME]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="DISCHARGEMODENAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeModeName]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODENAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ACCOUNTADDRESSPHONENO]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ACCOUNTADDRESSPHONENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddressPhoneNo]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ACCOUNTADDRESSPHONENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[OPERATORNO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="OPERATORNO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[OPERATORNO]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[OPERATORNO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[SEX]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SEX"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Sex]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEX]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PATIENTID]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="PATIENTID"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatientID]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[SYXH]"
+                          dataType="wstr"
+                          length="25"
+                          name="SYXH" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BAH]"
+                          dataType="wstr"
+                          length="25"
+                          name="BAH" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WardCode]"
+                          dataType="wstr"
+                          length="25"
+                          name="WardCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Ward]"
+                          dataType="wstr"
+                          length="25"
+                          name="Ward" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WardName]"
+                          dataType="wstr"
+                          length="50"
+                          name="WardName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DeptCode]"
+                          dataType="wstr"
+                          length="25"
+                          name="DeptCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DeptName]"
+                          dataType="wstr"
+                          length="50"
+                          name="DeptName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BedNo]"
+                          dataType="wstr"
+                          length="20"
+                          name="BedNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Sex]"
+                          dataType="wstr"
+                          length="50"
+                          name="Sex" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CardNo]"
+                          dataType="wstr"
+                          length="50"
+                          name="CardNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CardType]"
+                          dataType="wstr"
+                          length="50"
+                          name="CardType" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PersonalID]"
+                          dataType="wstr"
+                          length="50"
+                          name="PersonalID" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatType]"
+                          dataType="wstr"
+                          length="50"
+                          name="PatType" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitDate]"
+                          dataType="wstr"
+                          length="50"
+                          name="AdmitDate" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeDate]"
+                          dataType="wstr"
+                          length="50"
+                          name="DischargeDate" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitDiag]"
+                          dataType="wstr"
+                          length="200"
+                          name="AdmitDiag" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[INHOS_TYPE]"
+                          dataType="wstr"
+                          length="50"
+                          name="INHOS_TYPE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthDay]"
+                          dataType="dbTimeStamp"
+                          name="BirthDay" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Status]"
+                          dataType="wstr"
+                          length="50"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Nationality]"
+                          dataType="wstr"
+                          length="50"
+                          name="Nationality" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[NationalityCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="NationalityCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Nation]"
+                          dataType="wstr"
+                          length="50"
+                          name="Nation" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[NationCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="NationCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Profession]"
+                          dataType="wstr"
+                          length="50"
+                          name="Profession" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ProfessionCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProfessionCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PTBirthPlace]"
+                          dataType="wstr"
+                          length="100"
+                          name="PTBirthPlace" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[JGBirthPlace]"
+                          dataType="wstr"
+                          length="100"
+                          name="JGBirthPlace" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Marriage]"
+                          dataType="wstr"
+                          length="50"
+                          name="Marriage" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthPlaceS]"
+                          dataType="wstr"
+                          length="100"
+                          name="BirthPlaceS" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthPlace]"
+                          dataType="wstr"
+                          length="100"
+                          name="BirthPlace" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="CurrentAddress" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddressPhoneNo]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrentAddressPhoneNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CurrentAddressPostcode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrentAddressPostcode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="AccountAddress" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddressPhoneNo]"
+                          dataType="wstr"
+                          length="50"
+                          name="AccountAddressPhoneNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AccountAddressPostcode]"
+                          dataType="wstr"
+                          length="50"
+                          name="AccountAddressPostcode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="ContactAddress" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactFullName]"
+                          dataType="wstr"
+                          length="50"
+                          name="ContactFullName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactRelationship]"
+                          dataType="wstr"
+                          length="50"
+                          name="ContactRelationship" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactRelationshipCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ContactRelationshipCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ContactPhoneNo]"
+                          dataType="wstr"
+                          length="50"
+                          name="ContactPhoneNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkUnitAddress]"
+                          dataType="wstr"
+                          length="200"
+                          name="WorkUnitAddress" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkUnitPhoneNo]"
+                          dataType="wstr"
+                          length="50"
+                          name="WorkUnitPhoneNo" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[WorkPlacePostcode]"
+                          dataType="wstr"
+                          length="50"
+                          name="WorkPlacePostcode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[OPERATORNO]"
+                          dataType="wstr"
+                          length="50"
+                          name="OPERATORNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ISONWORK]"
+                          dataType="wstr"
+                          length="50"
+                          name="ISONWORK" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeMode]"
+                          dataType="wstr"
+                          length="50"
+                          name="DischargeMode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeModeName]"
+                          dataType="wstr"
+                          length="50"
+                          name="DischargeModeName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[MedicalPayWay]"
+                          dataType="wstr"
+                          length="50"
+                          name="MedicalPayWay" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[FullName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FullName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[InHospitalCount]"
+                          dataType="wstr"
+                          length="50"
+                          name="InHospitalCount" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ID]"
+                          dataType="guid"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[HospCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="HospCode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmitNO]"
+                          dataType="wstr"
+                          length="40"
+                          name="AdmitNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CureNO]"
+                          dataType="wstr"
+                          length="25"
+                          name="CureNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatientID]"
+                          dataType="wstr"
+                          length="25"
+                          name="PatientID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\序列容器\数据流任务\数据转换"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="数据转换;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;0"
+                  description="数据转换"
+                  name="数据转换"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]"
+                      name="数据转换输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[ADMITDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ADMITDATE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDATE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[DISCHARGEDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DISCHARGEDATE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEDATE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[BAH]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="BAH"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BAH]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[DEPTCODE]"
+                          cachedDataType="numeric"
+                          cachedName="DEPTCODE"
+                          cachedPrecision="6"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[INHOS_TYPE]"
+                          cachedDataType="numeric"
+                          cachedName="INHOS_TYPE"
+                          cachedPrecision="2"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOS_TYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[INHOSPITALCOUNT]"
+                          cachedDataType="numeric"
+                          cachedName="INHOSPITALCOUNT"
+                          cachedPrecision="38"
+                          cachedScale="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOSPITALCOUNT]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[ISONWORK]"
+                          cachedDataType="numeric"
+                          cachedName="ISONWORK"
+                          cachedPrecision="1"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ISONWORK]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[MEDICALPAYWAY]"
+                          cachedDataType="numeric"
+                          cachedName="MEDICALPAYWAY"
+                          cachedPrecision="1"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MEDICALPAYWAY]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[OPERATORNO]"
+                          cachedDataType="numeric"
+                          cachedName="OPERATORNO"
+                          cachedPrecision="6"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[OPERATORNO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[SEX]"
+                          cachedDataType="numeric"
+                          cachedName="SEX"
+                          cachedPrecision="1"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEX]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[STATUS]"
+                          cachedDataType="numeric"
+                          cachedName="STATUS"
+                          cachedPrecision="1"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[WARD]"
+                          cachedDataType="numeric"
+                          cachedName="WARD"
+                          cachedPrecision="6"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARD]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[WARDCODE]"
+                          cachedDataType="numeric"
+                          cachedName="WARDCODE"
+                          cachedPrecision="6"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[MARRIAGE]"
+                          cachedDataType="numeric"
+                          cachedName="MARRIAGE"
+                          cachedPrecision="1"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MARRIAGE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[PATTYPE]"
+                          cachedDataType="numeric"
+                          cachedName="PATTYPE"
+                          cachedPrecision="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATTYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[NATIONCODE]"
+                          cachedDataType="nText"
+                          cachedName="NATIONCODE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[NATIONALITYCODE]"
+                          cachedDataType="nText"
+                          cachedName="NATIONALITYCODE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITYCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[PROFESSIONCODE]"
+                          cachedDataType="nText"
+                          cachedName="PROFESSIONCODE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSIONCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[DISCHARGEMODE]"
+                          cachedDataType="numeric"
+                          cachedName="DISCHARGEMODE"
+                          cachedPrecision="2"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[DISCHARGEMODENAME]"
+                          cachedDataType="nText"
+                          cachedName="DISCHARGEMODENAME"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODENAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[ACCOUNTADDRESSPHONENO]"
+                          cachedDataType="nText"
+                          cachedName="ACCOUNTADDRESSPHONENO"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPHONENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[CARDTYPE]"
+                          cachedDataType="numeric"
+                          cachedName="CARDTYPE"
+                          cachedPrecision="38"
+                          cachedScale="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDTYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[CONTACTRELATIONSHIPCODE]"
+                          cachedDataType="nText"
+                          cachedName="CONTACTRELATIONSHIPCODE"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIPCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[HOSPCODE]"
+                          cachedDataType="numeric"
+                          cachedName="HOSPCODE"
+                          cachedPrecision="38"
+                          cachedScale="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[HOSPCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[PATIENTID]"
+                          cachedDataType="numeric"
+                          cachedName="PATIENTID"
+                          cachedPrecision="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出]"
+                      exclusionGroup="1"
+                      name="数据转换输出"
+                      synchronousInputId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ADMITDATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ADMITDATE]"
+                          name="ADMITDATE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ADMITDATE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[BAH]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[BAH]"
+                          name="BAH"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[BAH]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CARDTYPE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CARDTYPE]"
+                          name="CARDTYPE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CARDTYPE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEDATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEDATE]"
+                          name="DISCHARGEDATE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEDATE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODE]"
+                          name="DISCHARGEMODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOS_TYPE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOS_TYPE]"
+                          name="INHOS_TYPE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOS_TYPE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOSPITALCOUNT]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOSPITALCOUNT]"
+                          name="INHOSPITALCOUNT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[INHOSPITALCOUNT]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ISONWORK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ISONWORK]"
+                          name="ISONWORK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ISONWORK]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MARRIAGE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MARRIAGE]"
+                          name="MARRIAGE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MARRIAGE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MEDICALPAYWAY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[MEDICALPAYWAY]"
+                          name="MEDICALPAYWAY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[MEDICALPAYWAY]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONALITYCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONALITYCODE]"
+                          name="NATIONALITYCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONALITYCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[NATIONCODE]"
+                          name="NATIONCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[NATIONCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATTYPE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATTYPE]"
+                          name="PATTYPE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATTYPE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PROFESSIONCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PROFESSIONCODE]"
+                          name="PROFESSIONCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROFESSIONCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[STATUS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[STATUS]"
+                          name="STATUS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[STATUS]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARD]"
+                          name="WARD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARD]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARDCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[WARDCODE]"
+                          name="WARDCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[WARDCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[CONTACTRELATIONSHIPCODE]"
+                          name="CONTACTRELATIONSHIPCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CONTACTRELATIONSHIPCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[HOSPCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[HOSPCODE]"
+                          name="HOSPCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[HOSPCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEX]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEX]"
+                          name="SEX"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEX]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[OPERATORNO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[OPERATORNO]"
+                          name="OPERATORNO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[OPERATORNO]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODENAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEMODENAME]"
+                          name="DISCHARGEMODENAME"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DISCHARGEMODENAME]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[ACCOUNTADDRESSPHONENO]"
+                          name="ACCOUNTADDRESSPHONENO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ACCOUNTADDRESSPHONENO]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="数据转换错误输出"
+                      synchronousInputId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\序列容器\数据流任务.Paths[ADO NET 源输出]"
+                  endId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]"
+                  name="ADO NET 源输出"
+                  startId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出]" />
+                <path
+                  refId="Package\序列容器\数据流任务.Paths[数据转换输出]"
+                  endId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="数据转换输出"
+                  startId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\序列容器.PrecedenceConstraints[约束]"
+          DTS:CreationName=""
+          DTS:DTSID="{8A62674D-B31B-4046-AEEA-5B8F49BFE840}"
+          DTS:From="Package\序列容器\数据流任务"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="约束"
+          DTS:To="Package\序列容器\Merge" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束]"
+      DTS:CreationName=""
+      DTS:DTSID="{169CAFF6-8FD2-439F-A6DF-3E7482F7D9BB}"
+      DTS:From="Package\TruncateTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束"
+      DTS:To="Package\序列容器" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\TruncateTable"
+          TopLeft="171.249997448176,24.8888908786537" />
+        <NodeLayout
+          Size="108,41.6"
+          Id="Package\序列容器\Merge"
+          TopLeft="75.3749967310578,160.133325297744" />
+        <NodeLayout
+          Size="138.4,51.2"
+          Id="Package\序列容器\数据流任务"
+          TopLeft="52.8749970663339,25.4111092935376" />
+        <EdgeLayout
+          Id="Package\序列容器.PrecedenceConstraints[约束]"
+          TopLeft="125.724996898696,76.6111092935376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.5222160042069"
+              Start="0,0"
+              End="0,76.0222160042069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.0222160042069" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250.4,256"
+          Size="250.4,299.2"
+          Id="Package\序列容器"
+          TopLeft="140.624997904524,97.4999974171322" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束]"
+          TopLeft="249.249997448176,66.4888908786537">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.575000456348,31.0111065384785"
+              Start="0,0"
+              End="16.575000456348,23.5111065384785">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5055532692393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5055532692393"
+                    Point2="0,15.5055532692393"
+                    Point3="4,15.5055532692393" />
+                  <mssgle:LineSegment
+                    End="12.575000456348,15.5055532692393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.575000456348,15.5055532692393"
+                    Point2="16.575000456348,15.5055532692393"
+                    Point3="16.575000456348,19.5055532692393" />
+                  <mssgle:LineSegment
+                    End="16.575000456348,23.5111065384785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\序列容器\数据流任务">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\序列容器\数据流任务\数据转换"
+          TopLeft="354,140.72222220309" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\序列容器\数据流任务\OLE DB 目标"
+          TopLeft="316.125000996515,259.611112737361" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\序列容器\数据流任务\ADO NET 源"
+          TopLeft="353,27.5555555938203" />
+        <EdgeLayout
+          Id="Package\序列容器\数据流任务.Paths[数据转换输出]"
+          TopLeft="417.2,182.32222220309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.674999003485,77.288890534271"
+              Start="0,0"
+              End="-28.674999003485,69.788890534271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6444452671355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.6444452671355"
+                    Point2="0,38.6444452671355"
+                    Point3="-4,38.6444452671355" />
+                  <mssgle:LineSegment
+                    End="-24.674999003485,38.6444452671355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.674999003485,38.6444452671355"
+                    Point2="-28.674999003485,38.6444452671355"
+                    Point3="-28.674999003485,42.6444452671355" />
+                  <mssgle:LineSegment
+                    End="-28.674999003485,69.788890534271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\序列容器\数据流任务.Paths[ADO NET 源输出]"
+          TopLeft="419.7,69.1555555938203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.5666666092698"
+              Start="0,0"
+              End="0,64.0666666092698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.0666666092698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\序列容器\数据流任务\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\序列容器\数据流任务\ADO NET 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

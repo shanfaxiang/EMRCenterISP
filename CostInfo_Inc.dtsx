@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2021 3:47:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USER-20210729GJ"
+  DTS:CreatorName="USER-20210729GJ\Administrator"
+  DTS:DTSID="{93E9A608-178B-4379-BE20-88396C319AA8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{3E09BD7A-BCF8-47A1-92B5-08EE5E47A06D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+      DTS:CreationName="ADO.NET:System.Data.OracleClient.OracleConnection, System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{4F5BFE98-040A-4352-BB6C-2A0AF43A848A}"
+      DTS:ObjectName="128.100.200.86/hisdb.redh">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=128.100.200.86/hisdb;User ID=redh;Persist Security Info=True;Unicode=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAUVTHS3NxrWcN5FhqhJSfyDmsSKKJtqV7SFOZHwWHRWgAAAAAOgAAAAAIAACAAAADz/hjFmcNobYjVGbcwdVTYs45JP2iHjuHh7ZjTy5idWRAAAABsePNq5hS2rx5HYZNAjnE1QAAAAMEPri02jGoqvO1Ie+af9cyyv3ghQOs43b0FM6iFT+WTcwXiSQDTqTgonmufmsNZXjGbdCvgFWFD3gVQduyLpuQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A66BE6F8-A60E-4B6F-B69B-9248E3827ED8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;EXEC Merge_Stag_CostInfo&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MergeSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">EXEC Merge_Stag_CostInfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B9C345E-5EBE-4643-8F5E-7C6AC9810C8C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTable">
+      <DTS:VariableValue
+        DTS:DataType="8">v_costinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{93F2CA80-1427-40C0-BADA-1E19F998AFD6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTableShema">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{61C99D27-6537-4A40-91E2-D81841F3A2F8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetStagTableName">
+      <DTS:VariableValue
+        DTS:DataType="8">[EMRCenter].[dbo].[Stag_CostInfo]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5189B104-4CA1-42D8-B5B5-9DBB38643DEC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetTableName">
+      <DTS:VariableValue
+        DTS:DataType="8">[EMRCenter].[dbo].[CostInfo]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5A90D80C-5B6A-481C-8F12-40D41EC0EC5E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;TRUNCATE TABLE &quot;+ @[User::TargetStagTableName] + &quot; &#xA;GO&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TruncateSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">TRUNCATE TABLE [EMRCenter].[dbo].[Stag_CostInfo] 
+GO</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{39940270-B27B-4F13-A46D-B36B57D2333F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="WhereClause">
+      <DTS:VariableValue
+        DTS:DataType="8">WHERE 1=1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TruncateTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{9d66ed55-4d07-4f50-b032-9eda739891be}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TruncateTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{293AB100-5962-42C4-886C-5C84214D4082}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::TruncateSQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\序列容器"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{e628ee31-b862-4384-b8d4-e0bb05e4d060}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="序列容器">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\序列容器\Merge"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="执行 SQL 任务"
+          DTS:DTSID="{3e091f66-c4f2-422d-a54d-64006a532a3d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Merge"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{293AB100-5962-42C4-886C-5C84214D4082}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::MergeSQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\序列容器\数据流任务"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{9b20aa9a-653c-4c44-a9b6-941b8d634823}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="数据流任务"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\序列容器\数据流任务.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{384d30d7-ef35-4261-9af1-e1b9597dd1dd}"
+              DTS:EventID="1091525673"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="事件的传播属性"
+                  DTS:DTSID="{50658c79-0772-4725-8c44-3baf5e5304a2}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\序列容器\数据流任务\ADO NET 源"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+                  name="ADO NET 源"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="指定组件用来提取数据的 SQL 语句。"
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  *
+FROM      v_costinfo</property>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="源数据库表名。"
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"APEX_030200"."SYS_IOT_OVER_72926"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定检索外部列信息的模式"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+                      connectionManagerRefId="Package.ConnectionManagers[128.100.200.86/hisdb.redh]"
+                      description="托管连接管理器"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出]"
+                      name="ADO NET 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEQUENCENO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SEQUENCENO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEQUENCENO]"
+                          name="SEQUENCENO"
+                          precision="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURENO]"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]"
+                          name="CURENO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATIENTID]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          precision="10"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGENAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CHARGENAME]"
+                          length="14"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGENAME]"
+                          name="CHARGENAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGETYPE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CHARGETYPE]"
+                          length="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGETYPE]"
+                          name="CHARGETYPE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ZXKS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ZXKS]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ZXKS]"
+                          name="ZXKS"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTCODE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          precision="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ITEMNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ITEMNAME]"
+                          length="60"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ITEMNAME]"
+                          name="ITEMNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROPERTYNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROPERTYNAME]"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROPERTYNAME]"
+                          name="PROPERTYNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL]"
+                          name="TOTAL"
+                          precision="12"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL2]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL2]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL2]"
+                          name="TOTAL2"
+                          precision="12"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL3]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL3]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL3]"
+                          name="TOTAL3"
+                          precision="12"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[SEQUENCENO]"
+                          dataType="numeric"
+                          name="SEQUENCENO"
+                          precision="10" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CURENO]"
+                          dataType="wstr"
+                          length="10"
+                          name="CURENO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PATIENTID]"
+                          dataType="numeric"
+                          name="PATIENTID"
+                          precision="10" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CHARGENAME]"
+                          dataType="wstr"
+                          length="14"
+                          name="CHARGENAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[CHARGETYPE]"
+                          dataType="wstr"
+                          length="4"
+                          name="CHARGETYPE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ZXKS]"
+                          dataType="numeric"
+                          name="ZXKS"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[DEPTCODE]"
+                          dataType="numeric"
+                          name="DEPTCODE"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[ITEMNAME]"
+                          dataType="wstr"
+                          length="60"
+                          name="ITEMNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[PROPERTYNAME]"
+                          dataType="wstr"
+                          length="30"
+                          name="PROPERTYNAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL]"
+                          dataType="numeric"
+                          name="TOTAL"
+                          precision="12"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL2]"
+                          dataType="numeric"
+                          name="TOTAL2"
+                          precision="12"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].ExternalColumns[TOTAL3]"
+                          dataType="numeric"
+                          name="TOTAL3"
+                          precision="12"
+                          scale="5" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出]"
+                      isErrorOut="true"
+                      name="ADO NET 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SEQUENCENO]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[SEQUENCENO]"
+                          name="SEQUENCENO"
+                          precision="10" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURENO]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CURENO]"
+                          name="CURENO" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATIENTID]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          precision="10" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CHARGENAME]"
+                          dataType="wstr"
+                          length="14"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CHARGENAME]"
+                          name="CHARGENAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CHARGETYPE]"
+                          dataType="wstr"
+                          length="4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[CHARGETYPE]"
+                          name="CHARGETYPE" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ZXKS]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ZXKS]"
+                          name="ZXKS"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTCODE]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ITEMNAME]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ITEMNAME]"
+                          name="ITEMNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROPERTYNAME]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[PROPERTYNAME]"
+                          name="PROPERTYNAME" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL]"
+                          name="TOTAL"
+                          precision="12"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL2]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL2]"
+                          name="TOTAL2"
+                          precision="12"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL3]"
+                          dataType="numeric"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[TOTAL3]"
+                          name="TOTAL3"
+                          precision="12"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\序列容器\数据流任务\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[Stag_CostInfo]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="{293AB100-5962-42C4-886C-5C84214D4082}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[128.0.16.59.EMRCenter.sqladmin]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CHARGENAME]"
+                          cachedDataType="wstr"
+                          cachedLength="14"
+                          cachedName="CHARGENAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CHARGENAME]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGENAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CHARGETYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="CHARGETYPE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CHARGETYPE]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CHARGETYPE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ZXKS]"
+                          cachedDataType="numeric"
+                          cachedName="ZXKS"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ZXKS]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ZXKS]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[ITEMNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="ITEMNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ItemName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[ITEMNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PROPERTYNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="PROPERTYNAME"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PropertyName]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PROPERTYNAME]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[TOTAL]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL"
+                          cachedPrecision="12"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[TOTAL2]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL2"
+                          cachedPrecision="12"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total2]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL2]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[TOTAL3]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL3"
+                          cachedPrecision="12"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total3]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[TOTAL3]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[DEPTCODE]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="DEPTCODE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Deptcode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[PATIENTID]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="PATIENTID"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatientID]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[CURENO]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CURENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CureNO]"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[CURENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[SEQUENCENO]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SEQUENCENO"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[SequenceNO]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEQUENCENO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CHARGENAME]"
+                          dataType="wstr"
+                          length="50"
+                          name="CHARGENAME" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CHARGETYPE]"
+                          dataType="wstr"
+                          length="20"
+                          name="CHARGETYPE" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ZXKS]"
+                          dataType="numeric"
+                          name="ZXKS"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Deptcode]"
+                          dataType="wstr"
+                          length="20"
+                          name="Deptcode" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[ItemName]"
+                          dataType="wstr"
+                          length="60"
+                          name="ItemName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PropertyName]"
+                          dataType="wstr"
+                          length="50"
+                          name="PropertyName" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total]"
+                          dataType="numeric"
+                          name="Total"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total2]"
+                          dataType="numeric"
+                          name="Total2"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Total3]"
+                          dataType="numeric"
+                          name="Total3"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatientID]"
+                          dataType="wstr"
+                          length="25"
+                          name="PatientID" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[CureNO]"
+                          dataType="wstr"
+                          length="25"
+                          name="CureNO" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[SequenceNO]"
+                          dataType="wstr"
+                          length="50"
+                          name="SequenceNO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\序列容器\数据流任务\数据转换"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="数据转换;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;0"
+                  description="数据转换"
+                  name="数据转换"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]"
+                      name="数据转换输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[DEPTCODE]"
+                          cachedDataType="numeric"
+                          cachedName="DEPTCODE"
+                          cachedPrecision="6"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[SEQUENCENO]"
+                          cachedDataType="numeric"
+                          cachedName="SEQUENCENO"
+                          cachedPrecision="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEQUENCENO]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入].Columns[PATIENTID]"
+                          cachedDataType="numeric"
+                          cachedName="PATIENTID"
+                          cachedPrecision="10"
+                          lineageId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出]"
+                      exclusionGroup="1"
+                      name="数据转换输出"
+                      synchronousInputId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DEPTCODE]"
+                          name="DEPTCODE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[DEPTCODE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEQUENCENO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[SEQUENCENO]"
+                          name="SEQUENCENO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[SEQUENCENO]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]"
+                          name="PATIENTID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="指定用作转换数据源的输入列。"
+                              name="SourceInputColumnLineageID">#{Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出].Columns[PATIENTID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="数据转换错误输出"
+                      synchronousInputId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\序列容器\数据流任务.Paths[ADO NET 源输出]"
+                  endId="Package\序列容器\数据流任务\数据转换.Inputs[数据转换输入]"
+                  name="ADO NET 源输出"
+                  startId="Package\序列容器\数据流任务\ADO NET 源.Outputs[ADO NET 源输出]" />
+                <path
+                  refId="Package\序列容器\数据流任务.Paths[数据转换输出]"
+                  endId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="数据转换输出"
+                  startId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\序列容器.PrecedenceConstraints[约束]"
+          DTS:CreationName=""
+          DTS:DTSID="{f727997b-4dc5-4239-828b-54c05144dfc6}"
+          DTS:From="Package\序列容器\数据流任务"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="约束"
+          DTS:To="Package\序列容器\Merge" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束]"
+      DTS:CreationName=""
+      DTS:DTSID="{aeb0a13f-8a82-4f48-859b-4734607b2cee}"
+      DTS:From="Package\TruncateTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束"
+      DTS:To="Package\序列容器" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\TruncateTable"
+          TopLeft="90.624999543652,60" />
+        <NodeLayout
+          Size="108,41.6"
+          Id="Package\序列容器\Merge"
+          TopLeft="75.3749967310578,160.133325297744" />
+        <NodeLayout
+          Size="138.4,51.2"
+          Id="Package\序列容器\数据流任务"
+          TopLeft="52.8749970663339,25.4111092935376" />
+        <EdgeLayout
+          Id="Package\序列容器.PrecedenceConstraints[约束]"
+          TopLeft="125.724996898696,76.6111092935376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.5222160042069"
+              Start="0,0"
+              End="0,76.0222160042069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.0222160042069" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250.4,256"
+          Size="250.4,299.2"
+          Id="Package\序列容器"
+          TopLeft="60,132.611106538478" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束]"
+          TopLeft="168.624999543652,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.5750004563481,31.0111065384785"
+              Start="0,0"
+              End="16.5750004563481,23.5111065384785">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5055532692392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5055532692392"
+                    Point2="0,15.5055532692392"
+                    Point3="4,15.5055532692392" />
+                  <mssgle:LineSegment
+                    End="12.5750004563481,15.5055532692392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.5750004563481,15.5055532692392"
+                    Point2="16.5750004563481,15.5055532692392"
+                    Point3="16.5750004563481,19.5055532692392" />
+                  <mssgle:LineSegment
+                    End="16.5750004563481,23.5111065384785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\序列容器\数据流任务">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\序列容器\数据流任务\ADO NET 源"
+          TopLeft="353,27.5555555938202" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\序列容器\数据流任务\OLE DB 目标"
+          TopLeft="316.125000996515,259.611112737361" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\序列容器\数据流任务\数据转换"
+          TopLeft="351.874994756654,118.444441306738" />
+        <EdgeLayout
+          Id="Package\序列容器\数据流任务.Paths[数据转换输出]"
+          TopLeft="415.074994756654,160.044441306738">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.5499937601389,99.5666714306226"
+              Start="0,0"
+              End="-26.5499937601389,92.0666714306226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7833357153113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7833357153113"
+                    Point2="0,49.7833357153113"
+                    Point3="-4,49.7833357153113" />
+                  <mssgle:LineSegment
+                    End="-22.5499937601389,49.7833357153113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5499937601389,49.7833357153113"
+                    Point2="-26.5499937601389,49.7833357153113"
+                    Point3="-26.5499937601389,53.7833357153113" />
+                  <mssgle:LineSegment
+                    End="-26.5499937601389,92.0666714306226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\序列容器\数据流任务.Paths[ADO NET 源输出]"
+          TopLeft="418.637497378327,69.1555555938202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.2888857129178"
+              Start="0,0"
+              End="0,41.7888857129178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.7888857129178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\序列容器\数据流任务\ADO NET 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\序列容器\数据流任务\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
