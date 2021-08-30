@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="128.0.16.59.EMRCenter.sqladmin"
+  DTS:DTSID="{293AB100-5962-42C4-886C-5C84214D4082}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=128.0.16.59;User ID=sqladmin;Initial Catalog=EMRCenter;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAACAAAAAAAQZgAAAAEAACAAAABAuRmV2eRTQuaUc2Vhvw68KTh8lFBgCnamNhSwln/1GQAAAAAOgAAAAAIAACAAAADzLwgzBPeC9QT56/yU1Og8XdcEzveSnll/UwFLT0ejNIAAAADjEMXOKBL+ISCCOcSDjfK3sfSfnwlxELp3g/i4XcRF65a5pkwsx5rPmNE68gb165mSakl8SoUWVWrQXsVeIZ37rN5iF2IEtFIMT8VhPRNKUks0iGdATUbaMh7hhei7Ca/Xx/S5nf0/lf19ToZGGf2uZJDE7NZ9Fpx0LOeqIIZ7QUAAAACg5su81d+fconr27AJ57rF7x2etV/3F33I6yHOwzxggEJHL8R37KweP0/5t1Y04Yqterx6JgD3Sfz6S+j8yOqF</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
