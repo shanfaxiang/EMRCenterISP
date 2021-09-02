@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{092A0222-971E-4981-912F-B592D6284C5F}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{CCBAB6EA-F1AE-474C-9AE4-B9F9AA2F6A59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADCobTYjJiBTddyDlkludiPFoKRS/y3IkHYnEQfC+DgNwAAAAAOgAAAAAIAACAAAAB33m8PEs9Bdf70EcmMOf35ufDBH1wzSNwERhHKFKZA1CAAAABnDmxrOHsI0smx2N21DvMU2hm7J1a+bFhQaYi2ewKlfUAAAADRX8e3U9+yzJjglPyHKvQr6OEjR8kaWl7bw+1J8XzLfFX9T0gzYFDeUc622z+O0TGVPYcoVEYtlddIGGk5RWFM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABpLu2g/xzh8gL8GvMPQzw+S0Vr2HNNqbF78zSUe01zrQAAAAAOgAAAAAIAACAAAAD3Rrxgp7dWgcDT5GEWxKaPUkzehbeVF55hmci5OFm6uSAAAADrnVph3uYXFtemCuwtno3faejL+xAG+8hHMcDUBf7Pt0AAAABb81JgLyvvW3veTkXoj8p7ohjSmKlk3dkf1gd7z/H+6MhVonvjvaRm8yKE7B4qJGwjmGj72J2u+oJH+rUSjT56</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACohLqGeJcwLQgWDiVx4/KMdRxu3andkOzjjZOmnHKACgAAAAAOgAAAAAIAACAAAAC2QK3h6DUUD6+G/Qqcze6BDjGPJWaZ44BNzRK7gQEqRRAAAADG89GCq8RvpnHiY8xik0OtQAAAAOE7pI/J904Q2FEfm/JUAmZ5cZgr5rmWy5IfzyU3ruXTl2nPJgfmwciD/YNKWSg8c0a7aUXARA3nNME3eCsGY6k</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7L7jyHg2eku72wtg0WT1xwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABDWn/khfRip92JhDSOFRJWn7wcTJ837c4UXZdR7b+fgQAAAAAOgAAAAAIAACAAAABHnCO35ySxvY62CWc7TNLGASI1TuWyMadoXX5VtF/EZxAAAADAAM/UWKrtbSYMwJfdpY6uQAAAAFG2v16ihYIcD2JrWzqqvhpnfNwUyO63iVkDqHivXbrkKgRuuUUntpIxP6pjt8dwndX9kwym2mxxxbUdnh7sOvY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1727,13 +1727,6 @@ FROM      v_patientinfo</property>
                           externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[DischargeDate]"
                           lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[DISCHARGEDATE]" />
                         <inputColumn
-                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[INHOS_TYPE]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="INHOS_TYPE"
-                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[INHOS_TYPE]"
-                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOS_TYPE]" />
-                        <inputColumn
                           refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[BIRTHDAY]"
                           cachedDataType="dbTimeStamp"
                           cachedName="BIRTHDAY"
@@ -1886,6 +1879,13 @@ FROM      v_patientinfo</property>
                           cachedName="PATIENTID"
                           externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[PatientID]"
                           lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[PATIENTID]" />
+                        <inputColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[INHOS_TYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="INHOS_TYPE"
+                          externalMetadataColumnId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmissionMode]"
+                          lineageId="Package\序列容器\数据流任务\数据转换.Outputs[数据转换输出].Columns[INHOS_TYPE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1969,11 +1969,6 @@ FROM      v_patientinfo</property>
                           dataType="wstr"
                           length="200"
                           name="AdmitDiag" />
-                        <externalMetadataColumn
-                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[INHOS_TYPE]"
-                          dataType="wstr"
-                          length="50"
-                          name="INHOS_TYPE" />
                         <externalMetadataColumn
                           refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[BirthDay]"
                           dataType="dbTimeStamp"
@@ -2167,6 +2162,11 @@ FROM      v_patientinfo</property>
                           dataType="wstr"
                           length="25"
                           name="PatientID" />
+                        <externalMetadataColumn
+                          refId="Package\序列容器\数据流任务\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[AdmissionMode]"
+                          dataType="wstr"
+                          length="50"
+                          name="AdmissionMode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
